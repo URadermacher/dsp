@@ -16,7 +16,7 @@ import eu.vdrm.dsp.util.data.ExecutionResult;
  *
  */
 public class DummySink extends AbstractAudioSink implements Callable<ExecutionResult>{
-	private static Logger LOG = Logger.getLogger(WAVPlayer.class);
+	private static Logger LOG = Logger.getLogger(DummySink.class);
 	private short[] buffer = new short[DEFAULTBUFFERSIZE];
 	private boolean continuous;
 	
