@@ -1,0 +1,13 @@
+plugins {
+	id('java')
+	id('application')
+	}
+	
+mainClassName = 'eu.vdmr.dspgui.app.DSPGuiMain' 
+
+dependencies {
+    compile project(':UTILS')
+    compile project(':DSP')
+	implementation 'org.apache.logging.log4j:log4j-core:2.11.2'
+	implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+	}
