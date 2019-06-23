@@ -1,25 +1,28 @@
-#################
-## Eclipse
-#################
-
-*.pydevproject
-.project
-.metadata
-bin/
+#bin/
 tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.classpath
-.settings/
-.loadpath
-target/
-
-# External tool builders
-.externalToolBuilders/
+out/
+build/
+.gradle/
+**/classes/
+#*.tmp
+#*.bak
+#*.swp
+#*.class
+#*.jar
+#*~.nib
+#local.properties
+#.classpath
+#.settings/
+#.loadpath
+#target/
+#*/.gradle/*
+#.gradle/*
+#.gradle/*
+#.intellij
+#.gradle/5.4.1/executionHistory/executionHistory.bin
+## External tool builders
+#.externalToolBuilders/#
 
 # Locally stored "Eclipse launch configurations"
-*.launch
+#*.launch
 
