@@ -3,6 +3,7 @@ tmp/
 out/
 build/
 .gradle/
+.idea/
 **/classes/
 #*.tmp
 #*.bak
