@@ -2,136 +2,140 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f370d38-c60e-4e0a-81eb-17971250f9dc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/DATAVIEW/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/component/AbstractAudio.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/component/DSPComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/component/DSPComponentImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/component/DeviceType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/component/analyzer/AbstractAnalyzer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/component/analyzer/counter/ZeroCrossingCounter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/component/analyzer/transform/SimpleFFT.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/component/converter/channel/MonoToStereo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/component/converter/channel/StereoToMono.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/component/data/AbstractDataWriter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/component/data/DataWriter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/component/data/DataWriterType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/component/data/FFTDataWriter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/component/data/ZeroCountDataWriter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/component/filter/Decrackler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/component/filter/average/LeakyIntegrator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/component/filter/average/MovingAverageFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/component/generator/SimpleSineGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/component/io/player/WAVPlayer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/component/io/writer/DataLogger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/component/io/writer/WAVWriter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/component/util/DummySink.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/exceptions/FileExistsException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/util/audio/AbstractAudioSink.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/util/data/ExecutionResult.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/util/data/SystemInfoData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/util/system/Settings.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSP/src/main/java/eu/vdrm/dsp/util/system/SystemInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/app/DSPGui.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/app/DSPGuiMain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/app/DSPPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/app/DSPViewPort.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/component/DSPGuiComponent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/component/DSPGuiComponentImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/component/analyzer/counter/ZeroCrossingCounterGui.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/component/analyzer/transform/SimpleFFTGui.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/component/connector/Connector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/component/connector/ConnectorDirection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/component/connector/ConnectorPlacement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/component/connector/ConnectorType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/component/converter/channel/MonoToStereoGui.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/component/converter/channel/StereoToMonoGui.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/component/filter/DecracklerGui.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/component/filter/MovingAverageFilterGui.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/component/generator/SimpleSineGeneratorGui.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/component/io/player/WAVPlayerGui.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/component/io/reader/WAVReaderGui.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/component/util/DummySinkGui.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/listeners/action/CreateComponentActionListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/listeners/action/MenuEditActionListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/listeners/action/MenuLoadActionListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/listeners/action/MenuNewActionListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/listeners/action/MenuRunActionListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/listeners/action/MenuSaveActionListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/listeners/action/MenuSelectActionListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/listeners/action/MenuStopActionListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/listeners/action/MenuSystemInfoListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/listeners/action/helper/FileSaver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/listeners/mouse/DSPGuiMouseListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/listeners/mouse/EditMouseListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/listeners/state/StateChangeListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/popups/GeneralInfoPopUp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/popups/GeneralTextPopUp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/popups/SystemInfoGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/popups/data/DataWriterPopUp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/popups/generator/SingleTextCreatePopUp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/popups/io/reader/WavReaderCreatePopUp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/ApplicationState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/ComponentReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/Globals.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/ImageUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/MenuCreator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/filefilter/ProjectFileFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/filefilter/WAVFileFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/layout/SpringUtilities.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/project/ComponentFiler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/project/ComponentFilerImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/project/ProjectFiler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/project/XMLLabel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/project/component/analyzer/SimpleFFTFiler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/project/component/analyzer/ZeroCrossingCounterFiler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/project/component/converter/channel/MonoToStereoFiler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/project/component/converter/channel/StereoToMonoFiler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/project/component/filter/DecracklerFiler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/project/component/filter/MovingAverageFilterFiler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/project/component/generator/SimpleSineGeneratorFiler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/project/component/io/player/WAVPlayerFiler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/project/component/io/reader/WAVReaderFiler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/project/component/io/writer/DataLoggerFiler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/project/component/util/DummySinkFiler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/xmlentities/Entry.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/src/main/java/eu/vdrm/dspgui/util/xmlentities/Group.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UTILS/src/main/java/eu/vdrm/util/bits/BBConverter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UTILS/src/main/java/eu/vdrm/util/bits/HexUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UTILS/src/main/java/eu/vdrm/util/clazz/ObjectInitialiser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UTILS/src/main/java/eu/vdrm/util/dsp/MidiUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UTILS/src/main/java/eu/vdrm/util/math/Fibonacci.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UTILS/src/main/java/eu/vdrm/util/math/Numbers.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UTILS/src/main/java/eu/vdrm/util/run/Args.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UTILS/src/main/java/eu/vdrm/util/string/Extractor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UTILS/src/main/java/eu/vdrm/util/string/StrUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UTILS/src/main/java/eu/vdrm/util/xml/XMLFileWriter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UTILS/src/main/java/eu/vdrm/util/xml/XMLIndentWriter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UTILS/src/test/java/eu/vdrm/util/dsp/TestMidiUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UTILS/src/test/java/eu/vdrm/util/math/FobonacciTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UTILS/src/test/java/eu/vdrm/util/math/NumbersTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UTILS/src/test/java/eu/vdrm/util/run/ArgsTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/restjes/src/main/java/eu/vdrm/miscellaneous/AttackDecay.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/restjes/src/main/java/eu/vdrm/miscellaneous/BreakPoints.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/restjes/src/main/java/eu/vdrm/miscellaneous/MakeScale.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/restjes/src/main/java/eu/vdrm/miscellaneous/data/BreakPoint.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/restjes/src/test/java/eu/vdrm/miscellaneous/AttackDecayTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/restjes/src/test/java/eu/vdrm/miscellaneous/BreakPointsTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/restjes/src/test/java/eu/vdrm/miscellaneous/MakeScaleTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zTT/src/eu/vdrm/ztt/Arctan.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zTT/src/eu/vdrm/ztt/DFT64.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zTT/src/eu/vdrm/ztt/DFTUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zTT/src/eu/vdrm/ztt/Leaky_decay.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zTT/src/eu/vdrm/ztt/MovingAverage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zTT/src/eu/vdrm/ztt/OUT.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zTT/src/eu/vdrm/ztt/PiE.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zTT/src/eu/vdrm/ztt/Q2_8.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zTT/src/eu/vdrm/ztt/Q8.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zTT/src/eu/vdrm/ztt/TabbedPaneDemo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zTT/src/eu/vdrm/ztt/TransparentLabel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zTT/src/eu/vdrm/ztt/TransparentPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/zTT/src/eu/vdrm/ztt/bb/OppositeSign.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DATAVIEW/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/DATAVIEW/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DATAVIEW/build/libs/DATAVIEW-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/DSP/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/AbstractAudio$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/AbstractAudio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/DSPComponent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/DSPComponentImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/DeviceType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/analyzer/AbstractAnalyzer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/analyzer/counter/ZeroCrossingCounter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/analyzer/transform/SimpleFFT.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/converter/channel/MonoToStereo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/converter/channel/StereoToMono.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/data/AbstractDataWriter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/data/DataWriter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/data/DataWriterType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/data/FFTDataWriter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/data/ZeroCountDataWriter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/filter/Decrackler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/filter/average/LeakyIntegrator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/filter/average/MovingAverageFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/generator/SimpleSineGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/io/player/WAVPlayer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/io/writer/DataLogger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/io/writer/WAVWriter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/component/util/DummySink.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/exceptions/FileExistsException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/util/audio/AbstractAudioSink.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/util/data/ExecutionResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/util/data/SystemInfoData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/util/system/Settings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/classes/java/main/eu/vdmr/dsp/util/system/SystemInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSP/build/libs/DSP-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/app/DSPGui.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/app/DSPGuiMain$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/app/DSPGuiMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/app/DSPPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/app/DSPViewPort$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/app/DSPViewPort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/component/DSPGuiComponent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/component/DSPGuiComponentImpl$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/component/DSPGuiComponentImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/component/analyzer/counter/ZeroCrossingCounterGui.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/component/analyzer/transform/SimpleFFTGui.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/component/connector/Connector$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/component/connector/Connector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/component/connector/ConnectorDirection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/component/connector/ConnectorPlacement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/component/connector/ConnectorType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/component/converter/channel/MonoToStereoGui.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/component/converter/channel/StereoToMonoGui.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/component/filter/DecracklerGui.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/component/filter/MovingAverageFilterGui.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/component/generator/SimpleSineGeneratorGui.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/component/io/player/WAVPlayerGui.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/component/io/reader/WAVReaderGui.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/component/util/DummySinkGui.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/listeners/action/CreateComponentActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/listeners/action/MenuEditActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/listeners/action/MenuLoadActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/listeners/action/MenuNewActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/listeners/action/MenuRunActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/listeners/action/MenuSaveActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/listeners/action/MenuSelectActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/listeners/action/MenuStopActionListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/listeners/action/MenuSystemInfoListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/listeners/action/helper/FileSaver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/listeners/mouse/DSPGuiMouseListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/listeners/mouse/EditMouseListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/listeners/state/StateChangeListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/popups/GeneralInfoPopUp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/popups/GeneralTextPopUp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/popups/SystemInfoGUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/popups/data/DataWriterPopUp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/popups/generator/SingleTextCreatePopUp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/popups/io/reader/WavReaderCreatePopUp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/ApplicationState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/ComponentReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/Globals.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/ImageUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/MenuCreator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/filefilter/ProjectFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/filefilter/WAVFileFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/layout/SpringUtilities.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/project/ComponentFiler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/project/ComponentFilerImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/project/ProjectFiler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/project/XMLLabel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/project/component/analyzer/SimpleFFTFiler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/project/component/analyzer/ZeroCrossingCounterFiler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/project/component/converter/channel/MonoToStereoFiler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/project/component/converter/channel/StereoToMonoFiler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/project/component/filter/DecracklerFiler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/project/component/filter/MovingAverageFilterFiler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/project/component/generator/SimpleSineGeneratorFiler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/project/component/io/player/WAVPlayerFiler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/project/component/io/reader/WAVReaderFiler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/project/component/io/writer/DataLoggerFiler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/project/component/util/DummySinkFiler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/xmlentities/Entry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/classes/java/main/eu/vdmr/dspgui/util/xmlentities/Group.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/distributions/GUI-1.0.tar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/distributions/GUI-1.0.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/libs/GUI-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/scripts/GUI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI/build/scripts/GUI.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UTILS/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/UTILS/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UTILS/build/classes/java/main/eu/vdmr/util/bits/BBConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UTILS/build/classes/java/main/eu/vdmr/util/bits/HexUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UTILS/build/classes/java/main/eu/vdmr/util/clazz/ObjectInitialiser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UTILS/build/classes/java/main/eu/vdmr/util/dsp/MidiUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UTILS/build/classes/java/main/eu/vdmr/util/math/Fibonacci.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UTILS/build/classes/java/main/eu/vdmr/util/math/Numbers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UTILS/build/classes/java/main/eu/vdmr/util/run/Args$ArgVal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UTILS/build/classes/java/main/eu/vdmr/util/run/Args.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UTILS/build/classes/java/main/eu/vdmr/util/string/Extractor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UTILS/build/classes/java/main/eu/vdmr/util/string/StrUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UTILS/build/classes/java/main/eu/vdmr/util/xml/XMLFileWriter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UTILS/build/classes/java/main/eu/vdmr/util/xml/XMLIndentWriter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UTILS/build/libs/UTILS-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UTILS/build/resources/main/test.xml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/classes/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -166,53 +170,153 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="dsp" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="dsp" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="dsp" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="dsp" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
+        <entry file="file://$PROJECT_DIR$/GUI/src/main/java/eu/vdmr/dspgui/util/MenuCreator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="289">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GUI/src/main/java/eu/vdmr/dspgui/util/ComponentReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/org/xml/sax/helpers/XMLReaderFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="190" selection-start-line="190" selection-end-line="190" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GUI/src/main/java/eu/vdmr/dspgui/app/DSPGuiMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GUI/src/main/java/eu/vdmr/dspgui/app/DSPGui.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="52" selection-start-line="52" selection-end-line="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GUI/src/main/java/eu/vdmr/dspgui/util/Globals.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="201">
+              <caret line="120" column="30" selection-start-line="120" selection-start-column="30" selection-end-line="120" selection-end-column="30" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#3001#3002#0" expanded="true" />
+                <element signature="e#3048#3049#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UTILS/src/test/java/eu/vdmr/util/dsp/TestMidiUtil.java">
+        <entry file="file://$PROJECT_DIR$/GUI/src/main/java/eu/vdmr/dspgui/util/ImageUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" selection-start-line="5" selection-end-line="6" />
+            <state relative-caret-position="442">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GUI/src/main/resources/log4j2.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="87" selection-start-line="2" selection-start-column="87" selection-end-line="2" selection-end-column="87" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/UTILS/src/test/java/eu/vdmr/util/math/NumbersTest.java">
+        <entry file="file://$PROJECT_DIR$/GUI/src/main/resources/Components.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="153">
+              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UTILS/src/main/java/eu/vdmr/util/math/Numbers.java">
+        <entry file="file://$PROJECT_DIR$/GUI/src/main/java/eu/vdmr/dspgui/listeners/action/CreateComponentActionListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="25" column="82" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="82" />
+            <state relative-caret-position="255">
+              <caret line="29" column="77" selection-start-line="29" selection-start-column="77" selection-end-line="29" selection-end-column="77" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Assert.</find>
+      <find>vdrm</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>assertThat(</replace>
+      <replace>vdmr</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -220,8 +324,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/UTILS/src/test/java/eu/vdmr/util/dsp/TestMidiUtil.java" />
         <option value="$PROJECT_DIR$/UTILS/src/test/java/eu/vdmr/util/math/NumbersTest.java" />
+        <option value="$PROJECT_DIR$/UTILS/src/test/java/eu/vdmr/util/dsp/TestMidiUtil.java" />
+        <option value="$PROJECT_DIR$/UTILS/src/test/java/eu/vdmr/util/run/ArgsTest.java" />
+        <option value="$PROJECT_DIR$/GUI/src/main/java/eu/vdmr/dspgui/app/DSPGui.java" />
+        <option value="$PROJECT_DIR$/GUI/src/main/java/eu/vdmr/dspgui/util/ImageUtil.java" />
+        <option value="$PROJECT_DIR$/GUI/src/main/resources/log4j2.properties" />
+        <option value="$PROJECT_DIR$/GUI/src/main/resources/Components.xml" />
       </list>
     </option>
   </component>
@@ -255,57 +364,28 @@
             <path>
               <item name="dsp" type="b2602c69:ProjectViewProjectNode" />
               <item name="dsp" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="UTILS" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="GUI" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="dsp" type="b2602c69:ProjectViewProjectNode" />
               <item name="dsp" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="UTILS" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="GUI" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="dsp" type="b2602c69:ProjectViewProjectNode" />
               <item name="dsp" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="UTILS" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="GUI" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="dsp" type="b2602c69:ProjectViewProjectNode" />
               <item name="dsp" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="UTILS" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="GUI" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dsp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dsp" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="UTILS" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dsp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dsp" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="UTILS" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-              <item name="dsp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dsp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dsp" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="UTILS" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-              <item name="math" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -317,7 +397,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ws\dsp\src\main" />
+      <recent name="D:\ws\dsp\GUI\src\main\resources" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -330,6 +417,93 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager" selected="Gradle.dsp [clean]">
+    <configuration name="DSPGuiMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="eu.vdmr.dspgui.app.DSPGuiMain" />
+      <module name="dsp.GUI.main" />
+      <option name="VM_PARAMETERS" value="-Dlog4j2.debugcc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="eu.vdmr.dspgui.app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dsp [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="dsp [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="dsp [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.DSPGuiMain" />
+      <item itemvalue="Gradle.dsp [build]" />
+      <item itemvalue="Gradle.dsp [clean]" />
+      <item itemvalue="Gradle.dsp [run]" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.DSPGuiMain" />
+        <item itemvalue="Gradle.dsp [run]" />
+        <item itemvalue="Gradle.dsp [build]" />
+        <item itemvalue="Gradle.dsp [clean]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -346,7 +520,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Image Layers" />
@@ -354,21 +527,22 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Learn" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Build" weight="0.32917964" />
+      <window_info anchor="bottom" id="Messages" weight="0.32917964" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32917964" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997923" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Gradle" />
+      <window_info anchor="right" id="Gradle" visible="true" weight="0.14658849" />
       <window_info anchor="right" id="Theme Preview" />
       <window_info anchor="right" id="Maven" />
       <window_info anchor="right" id="Capture Analysis" />
@@ -408,6 +582,48 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
     </layout-to-restore>
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/GUI/src/main/java/eu/vdmr/dspgui/app/DSPGui.java</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/GUI/src/main/java/eu/vdmr/dspgui/util/ComponentReader.java</url>
+          <line>39</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/GUI/src/main/java/eu/vdmr/dspgui/listeners/action/CreateComponentActionListener.java</url>
+          <line>29</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/GUI/src/main/java/eu/vdmr/dspgui/app/DSPGui.java</url>
+          <line>52</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/GUI/src/main/java/eu/vdmr/dspgui/util/ImageUtil.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/GUI/src/main/java/eu/vdmr/dspgui/app/DSPGuiMain.java</url>
+          <line>13</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
@@ -435,16 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UTILS/src/test/java/eu/vdmr/util/dsp/TestMidiUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="5" selection-end-line="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UTILS/src/main/java/eu/vdmr/util/math/Numbers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -452,13 +658,111 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UTILS/src/test/java/eu/vdmr/util/math/NumbersTest.java">
+    <entry file="file://$PROJECT_DIR$/UTILS/src/test/java/eu/vdmr/util/dsp/TestMidiUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+        <state relative-caret-position="391">
+          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UTILS/src/test/java/eu/vdmr/util/math/NumbersTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="10" selection-start-line="6" selection-end-line="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#295#334#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UTILS/src/test/java/eu/vdmr/util/run/ArgsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="119" column="48" selection-start-line="119" selection-start-column="48" selection-end-line="119" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/org/xml/sax/helpers/XMLReaderFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="190" selection-start-line="190" selection-end-line="190" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/src/main/java/eu/vdmr/dspgui/util/MenuCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/src/main/java/eu/vdmr/dspgui/listeners/action/CreateComponentActionListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="29" column="77" selection-start-line="29" selection-start-column="77" selection-end-line="29" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/src/main/java/eu/vdmr/dspgui/util/Globals.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="120" column="30" selection-start-line="120" selection-start-column="30" selection-end-line="120" selection-end-column="30" />
+          <folding>
+            <element signature="e#3001#3002#0" expanded="true" />
+            <element signature="e#3048#3049#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/src/main/java/eu/vdmr/dspgui/app/DSPGuiMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/src/main/java/eu/vdmr/dspgui/util/ComponentReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/src/main/java/eu/vdmr/dspgui/util/ImageUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/src/main/java/eu/vdmr/dspgui/app/DSPGui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/src/main/resources/log4j2.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="87" selection-start-line="2" selection-start-column="87" selection-end-line="2" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/src/main/resources/Components.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
         </state>
       </provider>
     </entry>
