@@ -12,7 +12,8 @@ import javax.swing.ImageIcon;
 public class ImageUtil {
 
 	private static final String IMAGE_LOCATION = "images";
-	
+	private static final String IMAGE_LOCATION_DEBUG = "GUI\\images";
+
 	/**
 	 * Load an Image from a file
 	 * @param name file name (must reside in image directory)
@@ -20,9 +21,15 @@ public class ImageUtil {
 	 */
 	public Image loadImage(String name){
 		Image image = null;
-		String iconfile = System.getProperty("user.dir") + "\\"+IMAGE_LOCATION+"\\" + name;
+		String userDir = System.getProperty("user.dir");
+		String iconfile = userDir + "\\"+IMAGE_LOCATION+"\\" + name;
 		try {
 			File input = new File(iconfile);
+			if (!input.exists()) {
+				// in debug mode is userDir one step higher..
+				iconfile = userDir + "\\"+IMAGE_LOCATION_DEBUG+"\\" + name;
+				input = new File(iconfile);
+			}
 			image = ImageIO.read(input);
 		} catch (IOException ie) {
 			System.out.println("Error for file " + iconfile + ":" + ie.getMessage());

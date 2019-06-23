@@ -1,109 +1,110 @@
 package eu.vdmr.util.run;
 
-import java.util.Set;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class ArgsTest {
+import java.util.Set;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+class ArgsTest {
     
     @Test
-    public void testSingleParm(){
+    void testSingleParm(){
         String[] in = new String[1];
         in[0] = "singleVal";
         Args args = new Args();
         Args.ArgVal result = args.getArgs(in, true);
-        Assert.assertEquals("singleVal",result.getParms().get(0));
-        Assert.assertNull(result.getKetValuePairs());
+        assertThat(result.getParms().get(0)).isEqualTo("singleVal");
+        assertThat(result.getKetValuePairs()).isNull();
     }
 
     @Test
-    public void testSeveralParms(){
+    void testSeveralParms(){
         String[] in = new String[3];
         in[0] = "Val_0";
         in[1] = "Val_1";
         in[2] = "Val_2";
         Args args = new Args();
         Args.ArgVal result = args.getArgs(in, true);
-        Assert.assertEquals("Val_0",result.getParms().get(0));
-        Assert.assertEquals("Val_1",result.getParms().get(1));
-        Assert.assertEquals("Val_2",result.getParms().get(2));
-        Assert.assertNull(result.getKetValuePairs());
+        assertThat(result.getParms().get(0)).isEqualTo("Val_0");
+        assertThat(result.getParms().get(1)).isEqualTo("Val_1");
+        assertThat(result.getParms().get(2)).isEqualTo("Val_2");
+        assertThat(result.getKetValuePairs()).isNull();
     }
 
     @Test
-    public void testNameVal(){
+    void testNameVal(){
         String[] in = new String[2];
         in[0] = "-input";
         in[1] = "myfile.txt";
         Args args = new Args();
         Args.ArgVal result = args.getArgs(in, true);
-        Assert.assertEquals("myfile.txt",result.getKetValuePairs().get("input"));
-        Assert.assertNull(result.getParms());
+        assertThat(result.getKetValuePairs().get("input")).isEqualTo("myfile.txt");
+        assertThat(result.getParms()).isNull();
     }
 
     @Test
-    public void test2NameVal(){
+    void test2NameVal(){
         String[] in = new String[4];
         in[0] = "-input";
         in[1] = "myfile.txt";
         in[2] = "-input";
-        in[3] = "mynexfile.txt";
+        in[3] = "mynextfile.txt";
         Args args = new Args();
         Args.ArgVal result = args.getArgs(in, true);
-        Assert.assertEquals("mynexfile.txt",result.getKetValuePairs().get("input"));
-        Assert.assertNull(result.getParms());
+        assertThat(result.getKetValuePairs().get("input")).isEqualTo("mynextfile.txt");
+        assertThat(result.getParms()).isNull();
     }
 
 
     @Test
-    public void test2NameValEmpty(){
+    void test2NameValEmpty(){
         String[] in = new String[3];
         in[0] = "-input";
         in[1] = "myfile.txt";
         in[2] = "-input";
         Args args = new Args();
         Args.ArgVal result = args.getArgs(in, true);
-        Assert.assertEquals("myfile.txt",result.getKetValuePairs().get("input"));
-        Assert.assertNull(result.getParms());
+        assertThat(result.getKetValuePairs().get("input")).isEqualTo("myfile.txt");
+        assertThat(result.getParms()).isNull();
     }
 
     @Test
-    public void testKeysOnly(){
+    void testKeysOnly(){
         String[] in = new String[3];
         in[0] = "-a";
         in[1] = "-b";
         in[2] = "-c";
         Args args = new Args();
         Args.ArgVal result = args.getArgs(in, true);
-        Assert.assertNull(result.getKetValuePairs().get("a"));
-        Assert.assertNull(result.getKetValuePairs().get("b"));
-        Assert.assertNull(result.getKetValuePairs().get("c"));
-        Assert.assertEquals(3, result.getKetValuePairs().keySet().size());
+        assertThat(result.getKetValuePairs().get("a")).isNull();
+        assertThat(result.getKetValuePairs().get("b")).isNull();
+        assertThat(result.getKetValuePairs().get("c")).isNull();
+        assertThat(result.getKetValuePairs().keySet()).hasSize(3);
         Set<String> keys = result.getKetValuePairs().keySet();
-        Assert.assertTrue( keys.contains("a"));
-        Assert.assertTrue( keys.contains("b"));
-        Assert.assertTrue( keys.contains("c"));
-        Assert.assertNull(result.getParms());
+        assertThat(keys.contains("a")).isTrue();
+        assertThat(keys.contains("b")).isTrue();
+        assertThat(keys.contains("c")).isTrue();
+        assertThat(result.getParms()).isNull();
     }
 
     @Test
-    public void testMixed(){
+    void testMixed(){
         String[] in = new String[3];
         in[0] = "-a";
         in[1] = "first";
         in[2] = "loose";
         Args args = new Args();
         Args.ArgVal result = args.getArgs(in, true);
-        Assert.assertEquals("first",result.getKetValuePairs().get("a"));
-        Assert.assertEquals(1, result.getKetValuePairs().keySet().size());
+        assertThat(result.getKetValuePairs().get("a")).isEqualTo("first");
+        assertThat(result.getKetValuePairs().keySet()).hasSize(1);
         Set<String> keys = result.getKetValuePairs().keySet();
-        Assert.assertTrue( keys.contains("a"));
-        Assert.assertEquals("loose",result.getParms().get(0));
-
+        assertThat(keys.contains("a")).isTrue();
+        assertThat(result.getParms().get(0)).isEqualTo("loose");
     }
 
     @Test
-    public void testMixedDouble(){
+    void testMixedDouble(){
         String[] in = new String[5];
         in[0] = "-a";
         in[1] = "first";
@@ -112,18 +113,18 @@ public class ArgsTest {
         in[4] = "second";
         Args args = new Args();
         Args.ArgVal result = args.getArgs(in, true);
-        Assert.assertEquals("first",result.getKetValuePairs().get("a"));
-        Assert.assertEquals("second",result.getKetValuePairs().get("b"));
-        Assert.assertEquals(2, result.getKetValuePairs().keySet().size());
+        assertThat(result.getKetValuePairs().get("a")).isEqualTo("first");
+        assertThat(result.getKetValuePairs().get("b")).isEqualTo("second");
+        assertThat(result.getKetValuePairs().keySet()).hasSize(2);
         Set<String> keys = result.getKetValuePairs().keySet();
-        Assert.assertTrue( keys.contains("a"));
-        Assert.assertTrue( keys.contains("b"));
-        Assert.assertEquals("loose",result.getParms().get(0));
+        assertThat(keys.contains("a")).isTrue();
+        assertThat(keys.contains("b")).isTrue();
+        assertThat(result.getParms().get(0)).isEqualTo("loose");
 
     }
     
     @Test
-    public void testMixedSingle(){
+    void testMixedSingle(){
         String[] in = new String[5];
         in[0] = "-a";
         in[1] = "first";
@@ -132,15 +133,15 @@ public class ArgsTest {
         in[4] = "second";
         Args args = new Args();
         Args.ArgVal result = args.getArgs(in, false);
-        Assert.assertNull(result.getKetValuePairs().get("a"));
-        Assert.assertNull(result.getKetValuePairs().get("b"));
-        Assert.assertEquals(2, result.getKetValuePairs().keySet().size());
+        assertThat(result.getKetValuePairs().get("a")).isNull();
+        assertThat(result.getKetValuePairs().get("b")).isNull();
+        assertThat(result.getKetValuePairs().keySet()).hasSize(2);
         Set<String> keys = result.getKetValuePairs().keySet();
-        Assert.assertTrue( keys.contains("a"));
-        Assert.assertTrue( keys.contains("b"));
-        Assert.assertEquals("first",result.getParms().get(0));
-        Assert.assertEquals("loose",result.getParms().get(1));
-        Assert.assertEquals("second",result.getParms().get(2));
+        assertThat(keys.contains("a")).isTrue();
+        assertThat(keys.contains("b")).isTrue();
+        assertThat(result.getParms().get(0)).isEqualTo("first");
+        assertThat(result.getParms().get(1)).isEqualTo("loose");
+        assertThat(result.getParms().get(2)).isEqualTo("second");
 
     }
 }

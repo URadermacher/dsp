@@ -11,9 +11,10 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class NumbersTest {
 
+    @SuppressWarnings("ConstantConditions")
     @Test
     void testMaxNull() {
-        assertThatThrownBy(() -> {Numbers.getMax(null);})
+        assertThatThrownBy(() -> Numbers.getMax(null))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("may not be called with null!");
     }
@@ -21,7 +22,7 @@ class NumbersTest {
     @Test
     void testMaxEmpty() {
         List<Integer> l = new ArrayList<>();
-        assertThatThrownBy(() -> {Numbers.getMax(l);})
+        assertThatThrownBy(() -> Numbers.getMax(l))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("may not be called with empty list!");
     }
@@ -39,35 +40,35 @@ class NumbersTest {
 
     @Test
     void testMaxByte() {
-        List<Byte> l = new ArrayList<Byte>();
+        List<Byte> l = new ArrayList<>();
         l.add(Byte.valueOf("1"));
         l.add(Byte.valueOf("5"));
         l.add(Byte.valueOf("3"));
         Object o = Numbers.getMax(l);
-        Assert.assertTrue(o instanceof Byte);
-        Assert.assertEquals(5, ((Byte) o).intValue());
+        assertThat(o).isInstanceOf(Byte.class);
+        assertThat(((Byte) o).intValue()).isEqualTo(5);
     }
 
     @Test
     void testMaxDouble() {
-        List<Double> l = new ArrayList<Double>();
+        List<Double> l = new ArrayList<>();
         l.add(Double.valueOf("1.3"));
         l.add(Double.valueOf("5.88989"));
         l.add(Double.valueOf("3.7"));
         Object o = Numbers.getMax(l);
-        Assert.assertTrue(o instanceof Double);
-        Assert.assertEquals(5.88989, ((Double) o).doubleValue(), 0.0);
+        assertThat(o).isInstanceOf(Double.class);
+        assertThat(((Double) o).intValue()).isEqualTo(5.88989);
     }
 
     @Test
     void testMaxBigDecimal() {
-        List<BigDecimal> l = new ArrayList<BigDecimal>();
+        List<BigDecimal> l = new ArrayList<>();
         BigDecimal res = BigDecimal.valueOf(5.88989);
         l.add(BigDecimal.valueOf(1.3));
         l.add(res);
         l.add(BigDecimal.valueOf(3.7));
         Object o = Numbers.getMax(l);
-        Assert.assertTrue(o instanceof BigDecimal);
-        Assert.assertTrue(res.equals(o));
+        assertThat(o).isInstanceOf(BigDecimal.class);
+        assertThat(((BigDecimal) o).intValue()).isEqualTo(res);
     }
 }

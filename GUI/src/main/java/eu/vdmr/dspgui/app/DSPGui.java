@@ -45,6 +45,10 @@ public class DSPGui extends JFrame{
         Globals.getInstance().setMasterFrame(this);
         Globals.getInstance().setState(ApplicationState.EDIT);
         ImageIcon icon = Globals.getInstance().getImageIconFromFile("ragahindi.png");
+        if (icon == null) {
+            System.out.println("Cannot load image ragahindi.png");
+            System.exit(-1);
+        }
         this.setIconImage(icon.getImage());
         this.setVisible(true);	
 	}

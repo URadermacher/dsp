@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<components>
+	<group name="IO">
+		<group name="Reader">
+			<entry>
+				<displayname>WavReader</displayname>
+				<class>eu.vdmr.dspgui.component.io.reader.WAVReaderGui</class>
+				<impl>eu.vdmr.dsp.component.io.reader.WAVReader</impl>
+			</entry>
+		</group>
+		<group name="Player">
+			<entry>
+				<displayname>WavPlayer</displayname>
+				<class>eu.vdmr.dspgui.component.io.player.WAVPlayerGui</class>
+				<impl>eu.vdmr.dsp.component.io.player.WAVPlayer</impl>
+			</entry>
+		</group>
+		<group name="Writer">
+			<entry>
+				<displayname>DataWriter</displayname>
+				<class>eu.vdmr.dspgui.component.data.DataWriterGui</class>
+				<impl>eu.vdmr.dsp.component.data.DataWriter</impl>
+			</entry>
+			<entry>
+				<displayname>DataDumper</displayname>
+				<class>eu.vdmr.dspgui.component.io.writer.DataDumperGui</class>
+				<impl>eu.vdmr.dsp.component.io.writer.DataDumper</impl>
+			</entry>
+		</group>
+	</group>
+	<group name="Filter">
+		<entry>
+			<displayname>Decrackler</displayname>
+			<class>eu.vdmr.dspgui.component.filter.DecracklerGui</class>
+			<impl>eu.vdmr.dsp.component.filter.Decrackler</impl>
+		</entry>
+		<entry>
+			<displayname>MovingAverage</displayname>
+			<class>eu.vdmr.dspgui.component.filter.MovingAverageFilterGui</class>
+			<impl>eu.vdmr.dsp.component.filter.average.MovingAverageFilter</impl>
+		</entry>
+	</group>
+	<group name="Analyzer">
+		<group name="Transform">
+			<entry>
+				<displayname>SimpleFFT</displayname>
+				<class>eu.vdmr.dspgui.component.analyzer.transform.SimpleFFTGui</class>
+				<impl>eu.vdmr.dsp.component.analyzer.transform.SimpleFFT</impl>
+			</entry>
+		</group>
+		<group name="Counter">
+			<entry>
+				<displayname>ZeroCrossing</displayname>
+				<class>eu.vdmr.dspgui.component.analyzer.counter.ZeroCrossingCounterGui</class>
+				<impl>eu.vdmr.dsp.component.analyzer.counter.ZeroCrossingCounter</impl>
+			</entry>
+		</group>
+	</group>
+	<group name="Generator">
+		<group name="SineGenerator">
+			<entry>
+				<displayname>SimpleSineGenerator</displayname>
+				<class>eu.vdmr.dspgui.component.generator.SimpleSineGeneratorGui</class>
+				<impl>eu.vdmr.dsp.component.generator.SimpleSineGenerator</impl>
+			</entry>
+		</group>
+	</group>
+	<group name="Converter">
+		<group name="Channel">
+			<entry>
+				<displayname>MonoToStereo</displayname>
+				<class>eu.vdmr.dspgui.component.converter.channel.MonoToStereoGui</class>
+				<impl>eu.vdmr.dsp.component.converter.channel.MonoToStereo</impl>
+			</entry>
+			<entry>
+				<displayname>StereoToMono</displayname>
+				<class>eu.vdmr.dspgui.component.converter.channel.StereoToMonoGui</class>
+				<impl>eu.vdmr.dsp.component.converter.channel.StereoToMono</impl>
+			</entry>
+		</group>
+	</group>
+	<group name="Utils">
+		<entry>
+			<displayname>DummySink</displayname>
+			<class>eu.vdmr.dspgui.component.util.DummySinkGui</class>
+			<impl>eu.vdmr.dsp.component.util.DummySink</impl>
+		</entry>
+	</group>
+	<group name="Data">
+		<entry>
+			<displayname>ZeroCountDataWriter</displayname>
+			<class>eu.vdmr.dspgui.component.data.DataWriterGui</class>
+			<impl>eu.vdmr.dsp.component.data.ZeroCountDataWriter</impl>
+		</entry>
+	</group>
+</components>

@@ -14,14 +14,14 @@ class TestMidiUtil {
 
     @Test
     void testbig() {
-        assertThatThrownBy(() -> {MidiUtil.getFreqOfMidi(128)})
+        assertThatThrownBy(() -> MidiUtil.getFreqOfMidi(128))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("is NOT a valid Midi note number!");
     }
 
     @Test
     void testneg() {
-        assertThatThrownBy(() -> {MidiUtil.getFreqOfMidi(-1)})
+        assertThatThrownBy(() -> {MidiUtil.getFreqOfMidi(-1);})
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("is NOT a valid Midi note number!");
     }
