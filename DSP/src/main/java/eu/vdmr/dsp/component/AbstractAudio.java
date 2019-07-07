@@ -11,8 +11,8 @@ public abstract class AbstractAudio extends DSPComponentImpl{
 	 * NOTE: name and type are for informational purposes only and
 	 * serve to identify a specific device.
 	 *
-	 * @param String name is the name given to this device
-	 * @param int type is one of the device types listed above
+	 * @param  name is the name given to this device
+	 * @param  type is one of the device types
 	 */
 	public AbstractAudio(String name, DeviceType type) {
 
@@ -39,32 +39,6 @@ public abstract class AbstractAudio extends DSPComponentImpl{
 		retString += " Bypass: " + byPass + ">\n";
 
 		return retString;
-	}
-	/**
-	 * Static method for displaying a type string given the device type
-	 *
-	 * @param int type is the type of this AbstractAudio device
-	 */
-	public static String typeString(DeviceType type) {
-
-		switch (type) {
-
-			case NOTYPE:
-				return "No Type";
-
-			case SOURCE:
-				return "Source";
-
-			case PROCESSOR:
-				return "Processor";
-
-			case MONITOR:
-				return "Monitor";
-
-			case SINK:
-				return "Sink";
-		}
-		return "Unknown type";
 	}
 
 	/**
@@ -96,7 +70,7 @@ public abstract class AbstractAudio extends DSPComponentImpl{
 	/**
 	 * Used to set the bypass state of this device
 	 *
-	 * @param boolean byPass if true stage will be bypassed.
+	 * @param byPass if true stage will be bypassed.
 	 */
 	public void setByPass(boolean byPass) {
 
@@ -104,7 +78,7 @@ public abstract class AbstractAudio extends DSPComponentImpl{
 	}
 	
 	public int getSamplingRate() {
-		return samplingRate;			// Return sampling rate
+		return samplingRate;
 	}
 
 	protected void setSamplingRate(int s) {

@@ -4,7 +4,7 @@ out/
 build/
 .gradle/
 .idea/
-**/classes/
+#**/classes/
 #*.tmp
 #*.bak
 #*.swp

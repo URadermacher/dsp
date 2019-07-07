@@ -55,12 +55,12 @@ public class ZeroCrossingCounter extends AbstractAnalyzer {
 	/**
 	 * array to write to ZeroCountDataWriter..
 	 */
-	Integer[] data = new Integer[1];
+	private Integer[] data = new Integer[1];
 	
 	/**
 	 * our data output
 	 */
-	ZeroCountDataWriter zcWriter; 
+	private ZeroCountDataWriter zcWriter;
 
 
 	public ZeroCrossingCounter() {
@@ -85,7 +85,7 @@ public class ZeroCrossingCounter extends AbstractAnalyzer {
 		int ret = previous.getSamples(buffer, length);
 		if (ret > 0) { // we got data from previous
 			if (lastSample != null) {
-				if ((lastSample.shortValue() ^ buffer[0]) < 0) {
+				if ((lastSample ^ buffer[0]) < 0) {
 					cnt++;
 				}
 			}
@@ -124,7 +124,7 @@ public class ZeroCrossingCounter extends AbstractAnalyzer {
 	}
 
 	private void writeData(int count) {
-		data[0] = Integer.valueOf(count);
+		data[0] = count;
 		try {
 			zcWriter.addData(data);
 		} catch (IOException e) {

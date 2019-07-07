@@ -31,7 +31,6 @@ public class WavReaderCreatePopUp extends JDialog implements ActionListener {
 	/**
 	 * ctor
 	 * @param parent the ultimate parent frame
-	 * @param reader WAVReader (implements RagaDSPComponent)
 	 */
 	public WavReaderCreatePopUp(final JFrame parent){
 		super(parent, "Edit WavReader", true);
