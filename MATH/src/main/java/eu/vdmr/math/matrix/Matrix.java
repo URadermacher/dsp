@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 public class Matrix {
 
     private static Logger LOG = LogManager.getLogger(Matrix.class);
-
+    private static final double adjustment = 10000000.0;
 
     private final double[][] data;
     private final int rows;
@@ -52,6 +52,10 @@ public class Matrix {
         return data[row][col];
     }
 
+    public void set(int row, int col, double value) {
+        data[row][col] = value;
+    }
+
     public void echelon() {
         // we start with [0][0]
         logMatrix();
@@ -89,13 +93,69 @@ public class Matrix {
         if (!MatrixState.ECHELON.isEqualTo(state)) {
             throw new IllegalStateException("reduced Echelon form only possible for matrices in echelon form");
         }
+        logMatrix();
+        // set all pivot cells to 1
+        for (int rowidx = 0; rowidx< rows; rowidx++) {
+            boolean rowHandled = false;
+            for (int colidx = 0; colidx < cols && !rowHandled; colidx++) {
+                if (data[rowidx][colidx] != 0) {
+                    // pivot of row found
+                    multiplyRow(getRow(rowidx), colidx, 1/data[rowidx][colidx]);
+                    rowHandled = true;
+                    logMatrix();
+                }
+            }
+        }
+        // now create zeroes above all pivots, starting with the last one
+        for (int rowidx = rows - 1; rowidx > 0; rowidx-- ) {
+            int colidx = getFirstNonZero(getRow(rowidx));
+            nullifyToTop(rowidx, colidx);
+            logMatrix();
+        }
 
         state = MatrixState.REDUCED_ECHELOC;
     }
 
+    public int getFirstNonZero(double[] row) {
+        int result = -1;
+        for (int i = 0; i < cols; i++) {
+            if (row[i] != 0) {
+                return i;
+            }
+        }
+        // all zeroes:
+        return result;
+    }
+
     /**
-     * make sure that all entries [row][col] with row > row parameter and col = parameter are zero.
-     * use the [row][col] to determine actons
+     * make sure that all entries [row][col] with row < idx parameter and col = parameter are zero.
+     * use the [row][col] to determine actions
+     *
+     * @param idx      row from where above only zeros will be
+     * @param pivotCol column where this happens. We assume that for the pivot row all values before the
+     *                 pivot column are 0.0
+     */
+
+    public void nullifyToTop(int idx, int pivotCol) {
+        if (data[idx][pivotCol] != 1.0) {
+            throw new IllegalStateException("pivot cell must be 1.0, but data["+idx+"]["+pivotCol+"] is " + data[idx][pivotCol] );
+        }
+        for (int rowidx = idx-1; rowidx >= 0; rowidx--) {
+            if (data[rowidx][pivotCol] != 0.0) {
+                addRow(getRow(idx), getRow(rowidx), data[rowidx][pivotCol] * -1.0 , pivotCol);
+            }
+        }
+    }
+
+    public void multiplyRow(double[] row, int fromCol, double multiplier) {
+        for (int colidx = 0; colidx < cols; colidx++) {
+            row[colidx] = adjust(row[colidx] * multiplier);
+        }
+    }
+
+    /**
+     * make sure that all entries [row][col] with row > idx parameter and col = parameter are zero.
+     * use the [row][col] to determine actions
      *
      * @param idx      row from where below only zeros will be
      * @param pivotCol column where this happens
@@ -124,10 +184,20 @@ public class Matrix {
     public void addRow(double[] pivotRow, double[] calcRow, double scaleFactor, int colToStart) {
         // columns < colToStart are all zero when making echelon form, so we kan skip those..
         for (int i = colToStart; i < cols; i++) {
-            calcRow[i] = calcRow[i] + (pivotRow[i] * scaleFactor);
-            // 0.20000000000018 should be 0.2, as 0.1999999999999993
-            calcRow[i] = Math.round(calcRow[i] * 100000000000000.0) / 100000000000000.0;
+            calcRow[i] = adjust(calcRow[i] + (pivotRow[i] * scaleFactor));
         }
+    }
+
+    private double adjust(double number) {
+        // 0.20000000000018 should be 0.2, as 0.1999999999999993
+//        // but 1.0 E^7 should *not* become 92233.72036854776
+//        if (number % 1 ==0 ) {
+//            return number;
+//        }
+        double nn = number * adjustment;
+        double xx = Math.round(nn);
+        double yy = xx / adjustment;
+        return Math.round(number * adjustment) / adjustment;
     }
 
     public void switchRows(int targetRow, int pivotrow) {
@@ -226,4 +296,25 @@ public class Matrix {
         return MatrixState.ECHELON.isEqualTo(state);
     }
 
+    public String writeAsLinearEquation() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n");
+        for (int rowidx = 0; rowidx < rows; rowidx++) {
+            getLinearEqationRow(sb, getRow(rowidx));
+            sb.append("\n");
+        }
+        LOG.debug(sb.toString());
+        return  sb.toString();
+    }
+
+    private void getLinearEqationRow( StringBuilder sb ,double[] row) {
+        for (int colidx = 0; colidx < cols-1; colidx++) {
+            if (row[colidx] == 0) {
+                sb.append("\t\t");
+            } else {
+                sb.append(row[colidx]).append("x").append(colidx+1).append("\t");
+            }
+        }
+        sb.append(" = ").append(row[cols-1]);
+    }
 }

@@ -27,8 +27,7 @@ class MatrixTest {
     void testSetGetData() {
         Matrix matrix = createMatrix(3, 4);
         matrix.setData(1, 2, 3, 4, 11, 12, 13, 14, 21, 22, 23, 24);
-        double res = matrix.get(1, 2);
-        assertThat(res).isEqualTo(13);
+        assertThat(matrix.get(1, 2)).isEqualTo(13);
         assertThat(matrix.isInEchelonForm()).isFalse();
     }
 
@@ -55,6 +54,14 @@ class MatrixTest {
         Throwable thrown = catchThrowable(() -> matrix.switchRows(1, 3));
         assertThat(thrown).isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining("there is no row 1 or 3, actual rows = 3");
+    }
+
+    @Test
+    void testMultiplyRow1() {
+        Matrix matrix = createMatrix(2, 8);
+        double[] testRow = new double[]{0, 0, 4, 15, 1, 16, 40000000, -2.5};
+        matrix.multiplyRow(testRow, 2, 0.25);
+        assertThat(testRow).isEqualTo(new double[]{0, 0, 1, 3.75, 0.25, 4, 10000000, -0.625});
     }
 
     @Test
@@ -106,6 +113,18 @@ class MatrixTest {
         double[] exp2 = new double[]{0, -3, 13, -9};
         assertThat(matrix.getRow(1)).as("row 1").isEqualTo(exp1);
         assertThat(matrix.getRow(2)).as("row 2").isEqualTo(exp2);
+    }
+
+    @Test
+    void testGetFirstNonZero() {
+        Matrix matrix = TestData.getEmpty();
+        assertThat(matrix.getFirstNonZero(new double[]{0, 0, 2, 2})).isEqualTo(2);
+    }
+
+    @Test
+    void testGetFirstNonZeroAllZero() {
+        Matrix matrix = TestData.getEmpty();
+        assertThat(matrix.getFirstNonZero(new double[]{0, 0, 0, 0,})).isEqualTo(-1);
     }
 
     @Test
@@ -196,5 +215,52 @@ class MatrixTest {
         assertThatThrownBy(matrix::reducedEchelon)
                 .isInstanceOf(IllegalStateException.class)
                 .hasMessage("reduced Echelon form only possible for matrices in echelon form");
+    }
+
+    @Test
+    void testReducedEchelon1() {
+        Matrix matrix = TestData.getEx1();
+        matrix.echelon();
+        matrix.reducedEchelon();
+        assertThat(matrix.getRow(0)).isEqualTo(new double[]{1.0, 0.0, 0.0, 29.0});
+        assertThat(matrix.getRow(1)).isEqualTo(new double[]{0.0, 1.0, 0.0, 16.0});
+        assertThat(matrix.getRow(2)).isEqualTo(new double[]{0.0, 0.0, 1.0, 3.0});
+    }
+
+    @Test
+    void testReducedEchelon2() {
+        Matrix matrix = TestData.getEx2();
+        matrix.echelon();
+        matrix.reducedEchelon();
+        assertThat(matrix.getRow(0)).isEqualTo(new double[]{1.0, 0.0, -5.0, 0.0});
+        assertThat(matrix.getRow(1)).isEqualTo(new double[]{0.0, 1.0, -4.0, 0.0});
+        assertThat(matrix.getRow(2)).isEqualTo(new double[]{0.0, 0.0, 0.0, 1.0});
+    }
+
+
+    @Test
+    void testNullifyToTopError() {
+        Matrix matrix = TestData.getEx1();
+        assertThatThrownBy(() -> matrix.nullifyToTop(2, 1))
+                .isInstanceOf(IllegalStateException.class)
+                .hasMessage("pivot cell must be 1.0, but data[2][1] is 5.0");
+    }
+
+    @Test
+    void testNullifyToTop() {
+        Matrix matrix = TestData.getEx1();
+        matrix.set(2, 1, 1.0);
+        matrix.nullifyToTop(2, 1);
+        assertThat(matrix.getRow(0)).isEqualTo(new double[]{1, 0, 19, -18});
+        assertThat(matrix.getRow(1)).isEqualTo(new double[]{0, 0, -26, 26});
+    }
+
+    @Test
+    void testWriteAsLEq() {
+        Matrix matrix = TestData.getEx1();
+        String res = matrix.writeAsLinearEquation();
+        String[] lines = res.split("\n");
+        System.out.println(res);
+        assertThat(lines).hasSize(3);
     }
 }
