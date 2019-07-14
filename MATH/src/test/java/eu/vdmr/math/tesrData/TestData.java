@@ -27,18 +27,49 @@ public class TestData {
         return matrix;
     }
 
+    /**
+     * <pre>
+     *
+     *     0    1  -4   8
+     *     2   -3   2   1
+     *     5   -8   7   1
+     *
+     * </pre>
+     * @return this matrix
+     */
     public static Matrix getEx2() {
         Matrix matrix = createMatrix(3, 4);
         matrix.setData(0, 1, -4, 8, 2, -3, 2, 1, 5, -8, 7, 1);
         return matrix;
     }
 
+    /**
+     *
+     * <pre>
+     *     1   2   3   4   5   6
+     *     0   0   1   2   3   4
+     *     0   0   0   0   4   5
+     *     0   0   0   0   5   6
+     * </pre>
+     * @return this matrix
+     */
     public static Matrix getEx3() {
         Matrix matrix = createMatrix(4, 6);
         matrix.setData(1, 2, 3, 4, 5, 6, 0, 0, 1, 2, 3, 4, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, 5, 6);
         return matrix;
     }
 
+    /**
+     * <pre>
+     *
+     *    1  2  3  4
+     *    0  0  0  0
+     *    0  0  0  0
+     *    0  0  0  0
+     *
+     * </pre>
+     * @return this matrix
+     */
     public static Matrix getEx4() {
         Matrix matrix = createMatrix(4, 4);
         matrix.setData(1, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);

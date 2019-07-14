@@ -3,6 +3,9 @@ package eu.vdmr.math.matrix;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //@SuppressWarnings("unchecked")
 public class Matrix {
 
@@ -109,8 +112,10 @@ public class Matrix {
         // now create zeroes above all pivots, starting with the last one
         for (int rowidx = rows - 1; rowidx > 0; rowidx-- ) {
             int colidx = getFirstNonZero(getRow(rowidx));
-            nullifyToTop(rowidx, colidx);
-            logMatrix();
+            if (colidx != -1) { // non zero column found
+                nullifyToTop(rowidx, colidx);
+                logMatrix();
+            }
         }
 
         state = MatrixState.REDUCED_ECHELOC;
@@ -148,7 +153,7 @@ public class Matrix {
     }
 
     public void multiplyRow(double[] row, int fromCol, double multiplier) {
-        for (int colidx = 0; colidx < cols; colidx++) {
+        for (int colidx = fromCol; colidx < cols; colidx++) {
             row[colidx] = adjust(row[colidx] * multiplier);
         }
     }
@@ -243,19 +248,20 @@ public class Matrix {
      * (which is the same as a row in a linear system with
      * 0x1 + 0x2 + ... + 0xn = 1  which no xn's can solve..)
      *
-     * @return true if no inconsistent line is found
+     * @return an empty list if no inconsistent line is found, otherwise a list of row-indices
      * @throws IllegalStateException if matrix is not in an echelon form
      */
-    public boolean isConsistent() {
+    public List<Integer> isConsistent() {
+        List<Integer> result = new ArrayList<>();
         if (!MatrixState.ECHELON.isEqualTo(state)) {
             throw new IllegalStateException("consistency check only with matrices in echelon form");
         }
         for (int rowidx = 0; rowidx < rows; rowidx++) {
             if (isInconsistent(data[rowidx])) {
-                return false;
+                result.add(rowidx);
             }
         }
-        return true;
+        return result;
     }
 
     /**
@@ -284,7 +290,7 @@ public class Matrix {
         }
     }
 
-    public void logRow(int row) {
+    private void logRow(int row) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < cols; i++) {
             sb.append("\t").append("\t").append(data[row][i]);
@@ -294,6 +300,51 @@ public class Matrix {
 
     public boolean isInEchelonForm() {
         return MatrixState.ECHELON.isEqualTo(state);
+    }
+
+    /**
+     * assume the matrix is a representation of a linear equation: try to solve it
+     * @return an Object describing the solution
+     */
+    public LinearEquationSolution solve() {
+        LinearEquationSolution result = new LinearEquationSolution();
+            echelon();
+            if (!isConsistent().isEmpty()) {
+                result.setInconsistent(true);
+                result.setInconsistenRows(isConsistent());
+                return result;
+            }
+            reducedEchelon();
+            findBasicAndFreeVariables(result);
+            result.setSolved(true);
+        return result;
+    }
+
+    /**
+     * basic variables are variables corresponding to pivot columns.
+     * Assumes the matrix to be in reduced echelon form
+     * @param result the result object to record findings in
+     */
+    private void findBasicAndFreeVariables(LinearEquationSolution result) {
+        for (int rowidx = 0; rowidx < rows; rowidx++) {
+            boolean pivotFound = false;
+            LinearEquationSolution.FixedSolution solution = result.new FixedSolution();
+            for (int colidx = 0; colidx < cols - 1; colidx++) {
+                if (data[rowidx][colidx] != 0.0) {
+                    if (!pivotFound) {
+                        solution.setVarNr(colidx + 1);
+                        solution.setSolution(data[rowidx][cols - 1]);
+                        pivotFound = true;
+                    } else {
+                        solution.addFreeVariable(colidx + 1);
+                        solution.addFreeVariableValue(data[rowidx][colidx]);
+                    }
+                }
+            }
+            if (solution.getVarNr()!= -1 ) {
+                result.addSolution(solution);
+            }
+        }
     }
 
     public String writeAsLinearEquation() {

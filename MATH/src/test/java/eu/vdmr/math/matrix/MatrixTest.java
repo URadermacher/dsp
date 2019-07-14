@@ -3,6 +3,8 @@ package eu.vdmr.math.matrix;
 import eu.vdmr.math.tesrData.TestData;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static eu.vdmr.math.matrix.Matrix.createMatrix;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -193,14 +195,14 @@ class MatrixTest {
     void testConsistecyTrue() {
         Matrix matrix = TestData.getEx1();
         matrix.echelon();
-        assertThat(matrix.isConsistent()).isTrue();
+        assertThat(matrix.isConsistent()).isEmpty();
     }
 
     @Test
     void testConsistecyFalse() {
         Matrix matrix = TestData.getEx2();
         matrix.echelon();
-        assertThat(matrix.isConsistent()).isFalse();
+        assertThat(matrix.isConsistent()).isNotEmpty();
     }
 
     @Test
@@ -261,6 +263,65 @@ class MatrixTest {
         String res = matrix.writeAsLinearEquation();
         String[] lines = res.split("\n");
         System.out.println(res);
-        assertThat(lines).hasSize(3);
+        assertThat(lines).hasSize(4);
+    }
+
+    @Test
+    void testSolve1() {
+        Matrix matrix = TestData.getEx1();
+        LinearEquationSolution solution = matrix.solve();
+        assertThat(solution).isNotNull();
+        List<LinearEquationSolution.FixedSolution> solutions = solution.getSolutions();
+        assertThat(solutions).hasSize(3);
+        assertThat(solution.getFreeVariables()).isEmpty();
+        assertThat(solutions.get(0).getVarNr()).isEqualTo(1);
+        assertThat(solutions.get(0).getSolution()).isEqualTo(29.0);
+        assertThat(solutions.get(1).getVarNr()).isEqualTo(2);
+        assertThat(solutions.get(1).getSolution()).isEqualTo(16.0);
+        assertThat(solutions.get(2).getVarNr()).isEqualTo(3);
+        assertThat(solutions.get(2).getSolution()).isEqualTo(3.0);
+    }
+
+    @Test
+    void testSolve2() {
+        Matrix matrix = TestData.getEx2();
+        LinearEquationSolution solution = matrix.solve();
+        assertThat(solution).isNotNull();
+        assertThat(solution.isSolved()).isFalse();
+        assertThat(solution.isInconsistent()).isTrue();
+        assertThat(solution.getInconsistenRowsIndices()).hasSize(1);
+        assertThat(solution.getInconsistenRowsIndices().get(0)).isEqualTo(2);
+    }
+
+    @Test
+    void testSolve3() {
+        Matrix matrix = TestData.getEx3();
+        LinearEquationSolution solution = matrix.solve();
+        assertThat(solution).isNotNull();
+        assertThat(solution.isSolved()).isFalse();
+        assertThat(solution.isInconsistent()).isTrue();
+        assertThat(solution.getInconsistenRowsIndices()).hasSize(1);
+        assertThat(solution.getInconsistenRowsIndices().get(0)).isEqualTo(3);
+    }
+
+
+    @Test
+    void testSolve4() {
+        Matrix matrix = TestData.getEx4();
+        LinearEquationSolution solution = matrix.solve();
+        assertThat(solution).isNotNull();
+        assertThat(solution.isSolved()).isTrue();
+        assertThat(solution.isInconsistent()).isFalse();
+        assertThat((solution.getFreeVariables())).hasSize(2);
+        List<LinearEquationSolution.FixedSolution> solutions = solution.getSolutions();
+        assertThat(solutions).hasSize(1);
+        assertThat(solutions.get(0).getFreeVariables()).hasSize(2);
+        assertThat(solutions.get(0).getFreeVariables().get(0)).isEqualTo(2);
+        assertThat(solutions.get(0).getFreeVariables().get(1)).isEqualTo(3);
+        assertThat(solutions.get(0).getFreeVariableValues()).hasSize(2);
+        assertThat(solutions.get(0).getFreeVariableValues().get(0)).isEqualTo(2.0);
+        assertThat(solutions.get(0).getFreeVariableValues().get(1)).isEqualTo(3.0);
+        assertThat(solutions.get(0).getVarNr()).isEqualTo(1);
+        assertThat(solutions.get(0).getSolution()).isEqualTo(4.0);
     }
 }
