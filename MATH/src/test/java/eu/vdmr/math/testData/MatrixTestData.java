@@ -1,10 +1,10 @@
-package eu.vdmr.math.tesrData;
+package eu.vdmr.math.testData;
 
 import eu.vdmr.math.matrix.Matrix;
 
 import static eu.vdmr.math.matrix.Matrix.createMatrix;
 
-public class TestData {
+public class MatrixTestData {
 
     public static Matrix getEmpty() {
         return createMatrix(3, 4);

@@ -1,6 +1,7 @@
 package eu.vdmr.math.matrix;
 
-import eu.vdmr.math.tesrData.TestData;
+import eu.vdmr.math.testData.MatrixTestData;
+import eu.vdmr.math.vector.Vector;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -68,7 +69,7 @@ class MatrixTest {
 
     @Test
     void testGetRow() {
-        Matrix matrix = TestData.getEx1();
+        Matrix matrix = MatrixTestData.getEx1();
         assertThat(matrix.getRow(0)).as("getRow 0").isEqualTo(orgEx0);
         assertThat(matrix.getRow(1)).as("getRow 1").isEqualTo(orgEx1);
         assertThat(matrix.getRow(2)).as("getRow 2").isEqualTo(orgEx2);
@@ -79,7 +80,7 @@ class MatrixTest {
 
     @Test
     void testPivot() {
-        Matrix matrix = TestData.getEx1();
+        Matrix matrix = MatrixTestData.getEx1();
         assertThat(matrix.findPivot(0, 0)).as("row 0").isEqualTo(2);
         assertThat(matrix.findPivot(1, 1)).as("row 1").isEqualTo(2);
         assertThat(matrix.findPivot(2, 2)).as("row 2").isEqualTo(2);
@@ -88,7 +89,7 @@ class MatrixTest {
 
     @Test
     void testSwitchRows() {
-        Matrix matrix = TestData.getEx1();
+        Matrix matrix = MatrixTestData.getEx1();
         matrix.logMatrix();
         matrix.switchRows(1, 2);
         assertThat(matrix.getRow(0)).as("getRow 0").isEqualTo(orgEx0);
@@ -109,7 +110,7 @@ class MatrixTest {
 
     @Test
     void testNullifyFromRow() {
-        Matrix matrix = TestData.getEx1();
+        Matrix matrix = MatrixTestData.getEx1();
         matrix.nullifyFromRow(0, 0);
         double[] exp1 = new double[]{0, 2, -8, 8}; // was already zero..
         double[] exp2 = new double[]{0, -3, 13, -9};
@@ -119,19 +120,19 @@ class MatrixTest {
 
     @Test
     void testGetFirstNonZero() {
-        Matrix matrix = TestData.getEmpty();
+        Matrix matrix = MatrixTestData.getEmpty();
         assertThat(matrix.getFirstNonZero(new double[]{0, 0, 2, 2})).isEqualTo(2);
     }
 
     @Test
     void testGetFirstNonZeroAllZero() {
-        Matrix matrix = TestData.getEmpty();
+        Matrix matrix = MatrixTestData.getEmpty();
         assertThat(matrix.getFirstNonZero(new double[]{0, 0, 0, 0,})).isEqualTo(-1);
     }
 
     @Test
     void testEchelonForm1() {
-        Matrix matrix = TestData.getEx1();
+        Matrix matrix = MatrixTestData.getEx1();
         matrix.echelon();
         double[] exp0 = new double[]{-4, 5, 9, -9};
         double[] exp1 = new double[]{0, 2, -8, 8};
@@ -143,7 +144,7 @@ class MatrixTest {
 
     @Test
     void testEchelonForm2() {
-        Matrix matrix = TestData.getEx2();
+        Matrix matrix = MatrixTestData.getEx2();
         matrix.echelon();
         double[] exp0 = new double[]{5.0, -8.0, 7.0, 1.0};
         double[] exp1 = new double[]{0.0, 1.0, -4.0, 8.0};
@@ -155,7 +156,7 @@ class MatrixTest {
 
     @Test
     void testEchelonForm3() {
-        Matrix matrix = TestData.getEx3();
+        Matrix matrix = MatrixTestData.getEx3();
         matrix.echelon();
         double[] exp0 = new double[]{1, 2, 3, 4, 5, 6};
         double[] exp1 = new double[]{0, 0, 1, 2, 3, 4};
@@ -171,7 +172,7 @@ class MatrixTest {
 
     @Test
     void testEchelonForm4() {
-        Matrix matrix = TestData.getEx4();
+        Matrix matrix = MatrixTestData.getEx4();
         matrix.echelon();
         double[] exp0 = new double[]{1, 2, 3, 4};
         double[] exp1 = new double[]{0, 0, 0, 0};
@@ -185,7 +186,7 @@ class MatrixTest {
 
     @Test
     void testConsistencyOnlyWithEchelon() {
-        Matrix matrix = TestData.getEx1();
+        Matrix matrix = MatrixTestData.getEx1();
         assertThatThrownBy(matrix::isConsistent)
                 .isInstanceOf(IllegalStateException.class)
                 .hasMessage("consistency check only with matrices in echelon form");
@@ -193,27 +194,27 @@ class MatrixTest {
 
     @Test
     void testConsistecyTrue() {
-        Matrix matrix = TestData.getEx1();
+        Matrix matrix = MatrixTestData.getEx1();
         matrix.echelon();
         assertThat(matrix.isConsistent()).isEmpty();
     }
 
     @Test
     void testConsistecyFalse() {
-        Matrix matrix = TestData.getEx2();
+        Matrix matrix = MatrixTestData.getEx2();
         matrix.echelon();
         assertThat(matrix.isConsistent()).isNotEmpty();
     }
 
     @Test
     void testConsistecyRow() {
-        Matrix matrix = TestData.getEx2();
+        Matrix matrix = MatrixTestData.getEx2();
         assertThat(matrix.isInconsistent(new double[]{1.0, 2.0, 3.0, 0.0})).isFalse();
     }
 
     @Test
     void testReducedEchelonOnlyIfEchelon() {
-        Matrix matrix = TestData.getEx1();
+        Matrix matrix = MatrixTestData.getEx1();
         assertThatThrownBy(matrix::reducedEchelon)
                 .isInstanceOf(IllegalStateException.class)
                 .hasMessage("reduced Echelon form only possible for matrices in echelon form");
@@ -221,7 +222,7 @@ class MatrixTest {
 
     @Test
     void testReducedEchelon1() {
-        Matrix matrix = TestData.getEx1();
+        Matrix matrix = MatrixTestData.getEx1();
         matrix.echelon();
         matrix.reducedEchelon();
         assertThat(matrix.getRow(0)).isEqualTo(new double[]{1.0, 0.0, 0.0, 29.0});
@@ -231,7 +232,7 @@ class MatrixTest {
 
     @Test
     void testReducedEchelon2() {
-        Matrix matrix = TestData.getEx2();
+        Matrix matrix = MatrixTestData.getEx2();
         matrix.echelon();
         matrix.reducedEchelon();
         assertThat(matrix.getRow(0)).isEqualTo(new double[]{1.0, 0.0, -5.0, 0.0});
@@ -242,7 +243,7 @@ class MatrixTest {
 
     @Test
     void testNullifyToTopError() {
-        Matrix matrix = TestData.getEx1();
+        Matrix matrix = MatrixTestData.getEx1();
         assertThatThrownBy(() -> matrix.nullifyToTop(2, 1))
                 .isInstanceOf(IllegalStateException.class)
                 .hasMessage("pivot cell must be 1.0, but data[2][1] is 5.0");
@@ -250,7 +251,7 @@ class MatrixTest {
 
     @Test
     void testNullifyToTop() {
-        Matrix matrix = TestData.getEx1();
+        Matrix matrix = MatrixTestData.getEx1();
         matrix.set(2, 1, 1.0);
         matrix.nullifyToTop(2, 1);
         assertThat(matrix.getRow(0)).isEqualTo(new double[]{1, 0, 19, -18});
@@ -259,16 +260,19 @@ class MatrixTest {
 
     @Test
     void testWriteAsLEq() {
-        Matrix matrix = TestData.getEx1();
+        Matrix matrix = MatrixTestData.getEx1();
         String res = matrix.writeAsLinearEquation();
         String[] lines = res.split("\n");
-        System.out.println(res);
         assertThat(lines).hasSize(4);
+        assertThat(lines[0]).isEqualTo("");
+        assertThat(lines[1]).isEqualTo("x1\t-2.0x2\tx3\t = 0.0");
+        assertThat(lines[2]).isEqualTo("\t\t2.0x2\t-8.0x3\t = 8.0");
+        assertThat(lines[3]).isEqualTo("-4.0x1\t5.0x2\t9.0x3\t = -9.0");
     }
 
     @Test
     void testSolve1() {
-        Matrix matrix = TestData.getEx1();
+        Matrix matrix = MatrixTestData.getEx1();
         LinearEquationSolution solution = matrix.solve();
         assertThat(solution).isNotNull();
         List<LinearEquationSolution.FixedSolution> solutions = solution.getSolutions();
@@ -280,11 +284,12 @@ class MatrixTest {
         assertThat(solutions.get(1).getSolution()).isEqualTo(16.0);
         assertThat(solutions.get(2).getVarNr()).isEqualTo(3);
         assertThat(solutions.get(2).getSolution()).isEqualTo(3.0);
+        matrix.writeAsLinearEquation();
     }
 
     @Test
     void testSolve2() {
-        Matrix matrix = TestData.getEx2();
+        Matrix matrix = MatrixTestData.getEx2();
         LinearEquationSolution solution = matrix.solve();
         assertThat(solution).isNotNull();
         assertThat(solution.isSolved()).isFalse();
@@ -295,7 +300,7 @@ class MatrixTest {
 
     @Test
     void testSolve3() {
-        Matrix matrix = TestData.getEx3();
+        Matrix matrix = MatrixTestData.getEx3();
         LinearEquationSolution solution = matrix.solve();
         assertThat(solution).isNotNull();
         assertThat(solution.isSolved()).isFalse();
@@ -307,7 +312,7 @@ class MatrixTest {
 
     @Test
     void testSolve4() {
-        Matrix matrix = TestData.getEx4();
+        Matrix matrix = MatrixTestData.getEx4();
         LinearEquationSolution solution = matrix.solve();
         assertThat(solution).isNotNull();
         assertThat(solution.isSolved()).isTrue();
@@ -323,5 +328,70 @@ class MatrixTest {
         assertThat(solutions.get(0).getFreeVariableValues().get(1)).isEqualTo(3.0);
         assertThat(solutions.get(0).getVarNr()).isEqualTo(1);
         assertThat(solutions.get(0).getSolution()).isEqualTo(4.0);
+        matrix.writeAsLinearEquation();
     }
+
+    @Test
+    void testSetCol() {
+        Matrix matrix = MatrixTestData.getEx1();
+        matrix.setCol(1, new double[] {22.0, 23.0, 24.0});
+        double[] exp0 = new double[]{1.0, 22.0, 1.0, 0};
+        double[] exp1 = new double[]{0, 23.0, -8.0, 8.0};
+        double[] exp2 = new double[]{-4.0, 24.0, 9.0, -9.0};
+        assertThat(matrix.getRow(0)).as("row 0").isEqualTo(exp0);
+        assertThat(matrix.getRow(1)).as("row 1").isEqualTo(exp1);
+        assertThat(matrix.getRow(2)).as("row 2").isEqualTo(exp2);
+
+    }
+
+    @Test
+    void testVectorProduct() {
+        Matrix matrix = MatrixTestData.getEx1();
+        Vector multiplicand = Vector.createVector(4, 2.0, 3.0, 4.0, 5.0);
+        Vector result = matrix.vectorProduct(multiplicand);
+        Vector expected = Vector.createVector(3, 0.0, 14.0, -2.0 );
+        assertThat(result).isEqualTo(expected);
+
+    }
+
+
+    @Test
+    void testVectorProductError() {
+        Matrix matrix = MatrixTestData.getEx1();
+        Vector multiplicand = Vector.createVector(2, 2.0, 3.0);
+        assertThatThrownBy(() -> matrix.vectorProduct(multiplicand))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("Vector must have same dimansion as matric colums!");
+    }
+
+    @SuppressWarnings("EqualsBetweenInconvertibleTypes")
+    @Test
+    void tesEqualsOtherClass() {
+        Matrix matrix = MatrixTestData.getEx1();
+        assertThat(matrix.equals("Piet")).isFalse();
+    }
+
+    @Test
+    void testEqualsOK() {
+        Matrix matrix1 = MatrixTestData.getEx1();
+        Matrix matrix2 = MatrixTestData.getEx1();
+        assertThat(matrix1).isNotSameAs(matrix2);
+        assertThat(matrix1.equals(matrix2)).isTrue();
+    }
+
+    @Test
+    void testEqualsDiffSizes() {
+        Matrix matrix1 = MatrixTestData.getEx2();
+        Matrix matrix2 = MatrixTestData.getEx3();
+        assertThat(matrix1.equals(matrix2)).isFalse();
+    }
+
+    @Test
+    void testEqualsNot() {
+        Matrix matrix1 = MatrixTestData.getEx1();
+        Matrix matrix2 = MatrixTestData.getEx2();
+        assertThat(matrix1.equals(matrix2)).isFalse();
+    }
+
+
 }

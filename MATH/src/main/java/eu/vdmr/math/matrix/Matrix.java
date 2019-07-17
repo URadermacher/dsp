@@ -1,5 +1,7 @@
 package eu.vdmr.math.matrix;
 
+import eu.vdmr.math.DoubleHelper;
+import eu.vdmr.math.vector.Vector;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -10,7 +12,6 @@ import java.util.List;
 public class Matrix {
 
     private static Logger LOG = LogManager.getLogger(Matrix.class);
-    private static final double adjustment = 10000000.0;
 
     private final double[][] data;
     private final int rows;
@@ -44,6 +45,15 @@ public class Matrix {
         dataSet = true;
     }
 
+    public void setCol(int colIdx, double[] values) {
+        for (int i = 0; i < rows; i++) {
+            data[i][colIdx] = values[i];
+        }
+    }
+    public void set(int row, int col, double value) {
+        data[row][col] = value;
+    }
+
     public double[] getRow(int row) {
         if (row >= rows) {
             throw new IllegalArgumentException("there is no row " + row + ", actual rows = " + rows);
@@ -53,10 +63,6 @@ public class Matrix {
 
     public double get(int row, int col) {
         return data[row][col];
-    }
-
-    public void set(int row, int col, double value) {
-        data[row][col] = value;
     }
 
     public void echelon() {
@@ -154,7 +160,7 @@ public class Matrix {
 
     public void multiplyRow(double[] row, int fromCol, double multiplier) {
         for (int colidx = fromCol; colidx < cols; colidx++) {
-            row[colidx] = adjust(row[colidx] * multiplier);
+            row[colidx] = DoubleHelper.adjust(row[colidx] * multiplier);
         }
     }
 
@@ -189,20 +195,8 @@ public class Matrix {
     public void addRow(double[] pivotRow, double[] calcRow, double scaleFactor, int colToStart) {
         // columns < colToStart are all zero when making echelon form, so we kan skip those..
         for (int i = colToStart; i < cols; i++) {
-            calcRow[i] = adjust(calcRow[i] + (pivotRow[i] * scaleFactor));
+            calcRow[i] = DoubleHelper.adjust(calcRow[i] + (pivotRow[i] * scaleFactor));
         }
-    }
-
-    private double adjust(double number) {
-        // 0.20000000000018 should be 0.2, as 0.1999999999999993
-//        // but 1.0 E^7 should *not* become 92233.72036854776
-//        if (number % 1 ==0 ) {
-//            return number;
-//        }
-        double nn = number * adjustment;
-        double xx = Math.round(nn);
-        double yy = xx / adjustment;
-        return Math.round(number * adjustment) / adjustment;
     }
 
     public void switchRows(int targetRow, int pivotrow) {
@@ -362,10 +356,56 @@ public class Matrix {
         for (int colidx = 0; colidx < cols-1; colidx++) {
             if (row[colidx] == 0) {
                 sb.append("\t\t");
+            } else if (row[colidx] == 1.0) {
+                sb.append("x").append(colidx+1).append("\t");
             } else {
                 sb.append(row[colidx]).append("x").append(colidx+1).append("\t");
             }
         }
         sb.append(" = ").append(row[cols-1]);
+    }
+
+    public Vector vectorProduct(Vector x) {
+        if (cols != x.getDimension()) {
+            throw new IllegalArgumentException("Vector must have same dimansion as matric colums!");
+        }
+        Vector sum = Vector.createVector(rows);
+        double[] xArr = x.getData();
+        for (int colidx = 0; colidx < cols; colidx++ ) {
+              sum = sum.add(getColVector(colidx).multiply(xArr[colidx]));
+        }
+        return sum;
+    }
+
+    private Vector getColVector(int colIdx) {
+        return Vector.createVector(getCol(colIdx));
+    }
+
+    public double[] getCol(int colIdx) {
+        double[] res = new double[rows];
+        for (int i = 0; i < rows; i++) {
+            res[i] = data[i][colIdx];
+        }
+        return res;
+    }
+
+    @Override
+    public boolean equals(Object otherObject) {
+        if (! (otherObject instanceof Matrix)) {
+            return false;
+        }
+        Matrix other = (Matrix) otherObject;
+        // no IndexOutOfBound, please..
+        if (cols != other.cols || rows != other.rows) {
+            return false;
+        }
+        for (int rowidx = 0; rowidx < rows; rowidx ++) {
+            for (int colidx = 0; colidx < cols; colidx ++) {
+                if (data[rowidx][colidx] != other.data[rowidx][colidx]) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
