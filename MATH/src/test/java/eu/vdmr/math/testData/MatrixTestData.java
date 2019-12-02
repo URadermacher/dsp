@@ -75,4 +75,19 @@ public class MatrixTestData {
         matrix.setData(1, 2, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         return matrix;
     }
+    /**
+     * <pre>
+     *
+     *     1   5  -3
+     *    -2 -13   8
+     *     3  -3   1
+     *
+     * </pre>
+     * @return this matrix (Lay, 1.3 Example 6)
+     */
+    public static Matrix getEx5() {
+        Matrix matrix = createMatrix(3, 3);
+        matrix.setData(1, 5, -3, -2, -13, 8, 3, -3, 1);
+        return matrix;
+    }
 }

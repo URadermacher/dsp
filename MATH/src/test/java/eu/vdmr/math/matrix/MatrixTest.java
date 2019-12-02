@@ -332,6 +332,14 @@ class MatrixTest {
     }
 
     @Test
+    void testSolve5() {
+        Matrix matrix = MatrixTestData.getEx5();
+        LinearEquationSolution solution = matrix.solve();
+        assertThat(solution).isNotNull();
+        assertThat(solution.isInconsistent()).isTrue();
+    }
+
+    @Test
     void testSetCol() {
         Matrix matrix = MatrixTestData.getEx1();
         matrix.setCol(1, new double[] {22.0, 23.0, 24.0});
