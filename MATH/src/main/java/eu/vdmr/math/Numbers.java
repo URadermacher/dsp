@@ -56,4 +56,23 @@ public class Numbers {
         throw new IllegalArgumentException("Unknown Number type " + a.getClass().getCanonicalName());
         
     }
+
+    public static int expOf2(int in) {
+        if (in < 1) {
+            return -1;
+        }
+        int test = 1;
+        int exp = 0;
+        while (test <= in) {
+            if (test == in) {
+                return exp;
+            }
+            if (test > Integer.MAX_VALUE/2) {
+                return -1;
+            }
+            test = test * 2;
+            exp++;
+        }
+        return -1;
+    }
 }

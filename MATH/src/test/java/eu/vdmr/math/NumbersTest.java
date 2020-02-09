@@ -71,4 +71,18 @@ class NumbersTest {
         assertThat(o).isInstanceOf(BigDecimal.class);
         assertThat(((BigDecimal) o).intValue()).isEqualTo(res);
     }
+
+    @Test
+    void testexpOf2() {
+        assertThat(Numbers.expOf2(1)).isEqualTo(0);
+        assertThat(Numbers.expOf2(2)).isEqualTo(1);
+        assertThat(Numbers.expOf2(4)).isEqualTo(2);
+        assertThat(Numbers.expOf2(8)).isEqualTo(3);
+        assertThat(Numbers.expOf2(16)).isEqualTo(4);
+        assertThat(Numbers.expOf2(3)).isEqualTo(-1);
+        assertThat(Numbers.expOf2(37789)).isEqualTo(-1);
+        assertThat(Numbers.expOf2(0)).isEqualTo(-1);
+        assertThat(Numbers.expOf2(-4)).isEqualTo(-1);
+        assertThat(Numbers.expOf2(Integer.MAX_VALUE-55)).isEqualTo(-1);
+    }
 }
