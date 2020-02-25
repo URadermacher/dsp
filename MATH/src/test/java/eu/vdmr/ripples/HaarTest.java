@@ -76,7 +76,6 @@ public class HaarTest extends RippleTest {
     public void testMultiHaar_1() {
         double[] data = dataProvider.makeDoubles(56d, 40d, 8d, 24d, 48d, 48d, 40d, 16d);
         double[][] meaned = haar.multiHaarTransform(data, 3);
-        int i = 1;
         checkDoubles(meaned[0], 48d, 16d, 48d, 28d, 8d, -8d, 0, 12d);
         checkDoubles(meaned[1], 32d, 38d, 16d, 10d);
         checkDoubles(meaned[2], 35d, -3d);

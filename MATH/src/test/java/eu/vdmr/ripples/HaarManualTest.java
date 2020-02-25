@@ -1,31 +1,19 @@
 package eu.vdmr.ripples;
 
+import eu.vdmr.util.gnuplot.GnuPlotter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
+public class HaarManualTest extends RippleTest {
 
-//import com.panayotis.gnuplot.JavaPlot;
-
-
-public class HaarManualTest extends RippleTest{
-
-    private Path path ;
+    private GnuPlotter plotter;
     private Haar haar;
 
     @BeforeEach
     public void setup() {
         super.setup();
         haar = new Haar();
-        String tmpFile = System.getProperty("java.io.tmpdir") + File.separator + "Ex1.txt";
-        path = Paths.get(tmpFile);
-        System.out.println(path.toAbsolutePath());
+        plotter = new GnuPlotter();
     }
 
     @Test
@@ -33,7 +21,7 @@ public class HaarManualTest extends RippleTest{
     public void test1() {
         double[] data = dataProvider.makeDoubles(56d, 40d, 8d, 24d, 48d, 48d, 40d, 16d);
         double[] index = dataProvider.makeCounters(8);
-        if (writeData(index, data)) {
+        if (plotter.writeData(index, data)) {
             System.out.println("go to gnuplt to plot");
         }
     }
@@ -43,8 +31,8 @@ public class HaarManualTest extends RippleTest{
     public void test2() {
         double[] data = dataProvider.makeDoubles(56d, 40d, 8d, 24d, 48d, 48d, 40d, 16d);
         double[] index = dataProvider.makeCounters(8);
-        double[] meaned  = haar.haarTransform(data);
-        if (writeData(index, meaned)) {
+        double[] meaned = haar.haarTransform(data);
+        if (plotter.writeData(index, meaned)) {
             System.out.println("go to gnuplt to plot");
         }
     }
@@ -55,36 +43,21 @@ public class HaarManualTest extends RippleTest{
         double[] data = new double[8];
         data[0] = 1d;
         double[] index = dataProvider.makeCounters(8);
-        double[] meaned  = haar.haarInverse(data);
-        if (writeData(index, meaned)) {
+        double[] meaned = haar.haarInverse(data);
+        if (plotter.writeData(index, meaned)) {
             System.out.println("go to gnuplt to plot");
         }
     }
 
     @Test
     // plot transform for single 1's in signal data
-    public void test4()  {
+    public void test4() {
         double[] data = new double[8];
         data[7] = 1d;
         double[] index = dataProvider.makeCounters(8);
-        double[] meaned  = haar.haarTransform(data);
-        if (writeData(index, meaned)) {
+        double[] meaned = haar.haarTransform(data);
+        if (plotter.writeData(index, meaned)) {
             System.out.println("go to gnuplt to plot");
-        }
-    }
-
-
-    private boolean writeData(double[] data1, double[] data2) {
-        try (BufferedWriter writer = Files.newBufferedWriter(path,
-                StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING, StandardOpenOption.WRITE)) {
-            for (int i = 0; i < data1.length; i++) {
-                writer.write("" + data1[i] + "\t" + "" + data2[i] + "\n");
-            }
-            writer.flush();
-            return true;
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
         }
     }
 }

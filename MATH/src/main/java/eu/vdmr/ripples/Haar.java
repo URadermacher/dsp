@@ -37,37 +37,36 @@ public class Haar extends DWT {
 
     /**
      * Haar transform in place
+     * we want the result as in example so we have to rearrange:
+     * after one transform we have the diffs directly side by side
+     *  so [56d, 40d, 8d, 24d, 48d, 48d, 40d, 16d] becomes
+     *  [48, 8, 16, -8, 48, 0, 28, 12]  but we want
+     *  [48, 16, 48, 28, 8. -8, 0, 12]
      * @param in signal to be transformed
      * @param steps number of steps to do
      */
     public void haarInPlaceTransform(double[] in, int steps) {
         int length = in.length * 2;
+        double org;
+        double moving;
         for (int step = 0; step < steps; step++) {
             length /= 2;
             for (int idx = 0; idx < length; idx +=2) {
-                double org = in[idx];
+                org = in[idx];
                 in[idx] = (in[idx] + in[idx+1])/2;
                 in[idx+1] = org - in[idx];
             }
-            // rearrange
+            // rearrange (i.e. move the diffs to the right)
             for (int idx = 1; idx < length/2; idx++) {
-                int toMove = idx * 2;
-                double moving = in[toMove];
+                moving = in[ idx * 2];
                 // move diffs
-                for (int i = toMove; i > idx; i--) {
+                for (int i =  idx * 2; i > idx; i--) {
                     in[i] = in[i-1];
                 }
                 in[idx] = moving;
             }
         }
     }
-
-    private void swap(double[] in, int a, int b) {
-        double intermediate = in[a];
-        in[a] = in[b];
-        in[b] = intermediate;
-    }
-
 
     /**
      * transform a signal with Haar transform as many steps as possible (i.e. 2^x times. i.e. 3 steps with signal
@@ -84,9 +83,10 @@ public class Haar extends DWT {
         for (int i = in.length; i > 1; i /= 2) {
             double[] todo = Arrays.copyOf(out, i);
             double[] transformed = dwtHaar(todo);
-            for (int j = 0; j < i; j++) {
-                out[j] = transformed[j];
-            }
+//            for (int j = 0; j < i; j++) {
+//                out[j] = transformed[j];
+//            }
+            System.arraycopy(transformed, 0, out, 0, i);
         }
         return out;
     }
@@ -118,7 +118,7 @@ public class Haar extends DWT {
         double[] out = Arrays.copyOf(in, in.length);
 
         for (int i = 1; i < in.length; i *= 2) {
-            out = inverseHaar(out, Arrays.copyOfRange(out, 0, i));
+            inverseHaar(out, Arrays.copyOfRange(out, 0, i));
         }
         return out;
     }
@@ -130,18 +130,16 @@ public class Haar extends DWT {
      * in : 15 -5
      * out: 10 20
      *
-     * @param in  row to be transformed
+     * @param in  row to be transformed (in place)
      * @param org copy of this row (as data in the in array are overwritten ..
-     * @return the reversed row
      */
-    private double[] inverseHaar(double[] in, double[] org) {
+    private void inverseHaar(double[] in, double[] org) {
         int diffIdx = org.length;
         for (int i = 0; i < org.length; i++) {
             double diff = in[diffIdx++];
             in[2 * i] = org[i] + diff;
             in[2 * i + 1] = org[i] - diff;
         }
-        return in;
     }
 
     /**
