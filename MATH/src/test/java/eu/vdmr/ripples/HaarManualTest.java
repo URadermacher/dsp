@@ -1,5 +1,6 @@
 package eu.vdmr.ripples;
 
+import eu.vdmr.util.gnuplot.GnuPlot;
 import eu.vdmr.util.gnuplot.GnuPlotter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,7 +14,7 @@ public class HaarManualTest extends RippleTest {
     public void setup() {
         super.setup();
         haar = new Haar();
-        plotter = new GnuPlotter();
+       //plotter = new GnuPlotter(new GnuPlot(1, new int[] {2}));
     }
 
     @Test

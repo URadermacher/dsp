@@ -1,6 +1,6 @@
 package eu.vdmr.math.matrix;
 
-import eu.vdmr.math.DoubleHelper;
+import eu.vdmr.math.Numbers;
 import eu.vdmr.math.vector.Vector;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -160,7 +160,7 @@ public class Matrix {
 
     public void multiplyRow(double[] row, int fromCol, double multiplier) {
         for (int colidx = fromCol; colidx < cols; colidx++) {
-            row[colidx] = DoubleHelper.adjust(row[colidx] * multiplier);
+            row[colidx] = Numbers.adjustDouble(row[colidx] * multiplier);
         }
     }
 
@@ -195,7 +195,7 @@ public class Matrix {
     public void addRow(double[] pivotRow, double[] calcRow, double scaleFactor, int colToStart) {
         // columns < colToStart are all zero when making echelon form, so we kan skip those..
         for (int i = colToStart; i < cols; i++) {
-            calcRow[i] = DoubleHelper.adjust(calcRow[i] + (pivotRow[i] * scaleFactor));
+            calcRow[i] = Numbers.adjustDouble(calcRow[i] + (pivotRow[i] * scaleFactor));
         }
     }
 
@@ -345,14 +345,14 @@ public class Matrix {
         StringBuilder sb = new StringBuilder();
         sb.append("\n");
         for (int rowidx = 0; rowidx < rows; rowidx++) {
-            getLinearEqationRow(sb, getRow(rowidx));
+            getLinearEquationRow(sb, getRow(rowidx));
             sb.append("\n");
         }
         LOG.debug(sb.toString());
         return  sb.toString();
     }
 
-    private void getLinearEqationRow( StringBuilder sb ,double[] row) {
+    private void getLinearEquationRow(StringBuilder sb , double[] row) {
         for (int colidx = 0; colidx < cols-1; colidx++) {
             if (row[colidx] == 0) {
                 sb.append("\t\t");

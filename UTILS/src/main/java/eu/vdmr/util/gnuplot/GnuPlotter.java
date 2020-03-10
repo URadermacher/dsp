@@ -11,9 +11,9 @@ import java.nio.file.StandardOpenOption;
 public class GnuPlotter {
     private Path dataPath;
     private Path cmdPath;
-    private GnuPlotData data;
+    private GnuPlot data;
 
-    public GnuPlotter(GnuPlotData data) {
+    public GnuPlotter(GnuPlot data) {
         String dataFile = System.getProperty("java.io.tmpdir") + File.separator + "Ex1.txt";
         dataPath = Paths.get(dataFile);
         System.out.println("data: " + dataPath.toAbsolutePath());
@@ -59,7 +59,7 @@ public class GnuPlotter {
 
     public void execute() {
         writeCommand();
-        writeData();
+        writeData(null, null);
         doPlot();
     }
 

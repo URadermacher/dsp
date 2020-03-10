@@ -1,5 +1,6 @@
 package eu.vdmr.util.dsp;
 
+import org.assertj.core.data.Percentage;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -9,7 +10,7 @@ class TestMidiUtil {
     @Test
     void testMiddleC() {
         double res = MidiUtil.getFreqOfMidi(69);  // 69 must be a
-        assertThat(res).isEqualTo(440);
+        assertThat(res).isCloseTo(440, Percentage.withPercentage(0.0000001));
     }
 
     @Test

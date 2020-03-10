@@ -57,7 +57,7 @@ class NumbersTest {
         l.add(Double.valueOf("3.7"));
         Object o = Numbers.getMax(l);
         assertThat(o).isInstanceOf(Double.class);
-        assertThat(((Double) o).intValue()).isEqualTo(5.88989);
+        assertThat(((Double) o).intValue()).isEqualTo(5);
     }
 
     @Test
@@ -69,7 +69,7 @@ class NumbersTest {
         l.add(BigDecimal.valueOf(3.7));
         Object o = Numbers.getMax(l);
         assertThat(o).isInstanceOf(BigDecimal.class);
-        assertThat(((BigDecimal) o).intValue()).isEqualTo(res);
+        assertThat(((BigDecimal) o).intValue()).isEqualTo(5);
     }
 
     @Test
